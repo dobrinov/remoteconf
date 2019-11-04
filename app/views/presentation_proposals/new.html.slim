@@ -1,0 +1,69 @@
+header.header
+  .logo
+    strong become
+    span a
+    strong speaker
+
+  h1 This is a perfect place for you to show off your skill/knowledge, boost your self marketing or raise the awareness for a new technology.
+
+  = link_to 'Back', root_path, class: 'btn btn-lg btn-outline-secondary mt-5'
+
+.section
+  h2 Timeline
+  h5 Step 1: Collecting ideas
+  p At this stage we will be collecting ideas for video presentations. The real content will be needed only if those ideas get approved by RemoteConf's audience at "Step 3".
+
+  h5 Step 2: Marketing
+  p At this stage we will be focusing on advertising RemoteConf, so we can attract enough audience for the presentations.
+
+  h5 Step 3: Filtering
+  p We will let the audience decide which presentations are interesting and should be included in RemoteConf. After this we will get in touch with the presenters and let them know that their ideas have been selected so they can start preparing their video presentations.
+
+  h5 Step 4: Collecting the video presentations
+  p We will start collecting the video presentations. At this point we will also be able to announce an official release date of RemoteConf.
+
+.section
+  h2 Guideline
+  h5 > 15 minutes
+  p All presentations should be less than 15 minutes long. This constraint will help us keep them entertaining and will push the presenters in organising their thoughts better.
+
+  h5 Good audio & video quality
+  p Make sure that your audio/video setup is good before recording your presentation.
+
+.section#application
+  h2 Application
+
+= simple_form_for @presentation_proposal, url: presentation_proposals_path(anchor: 'application') do |form|
+  h5.text-center About you
+  .form-group
+    = form.input :presenter_name, input_html: {class: 'form-control-lg'}, label: 'Name'
+
+  .form-group
+    = form.input :presenter_email, input_html: {class: 'form-control-lg'}, label: 'Email'
+
+  .form-group
+    = form.input :presenter_introduction, as: :text,
+                                          input_html: {class: 'form-control-lg', rows: 5},
+                                          label: 'Few words about yourself',
+                                          placeholder: 'How would you like to present yourself to the audience?'
+
+  h3.text-center About your presentation
+  .form-group
+    = form.input :presentation_title, input_html: {class: 'form-control-lg'},
+                                      label: 'Presentation title',
+                                      placeholder: 'e.g. React Hooks 101'
+
+  .form-group
+    = form.input :presentation_description, as: :text,
+                                            input_html: {class: 'form-control-lg', rows: 5},
+                                            label: 'Few words about your presentation',
+                                            placeholder: 'What is your presentation about?'
+
+  .form-group
+    = form.input :audience_experience_level, collection: [['Beginner', :beginner], ['Intermediate', :intermediate], ['Advanced', :advanced]],
+                                    label: 'How experienced your audience should be to enjoy your presentation?',
+                                    prompt: 'Please select ...',
+                                    input_html: {class: 'custom-select custom-select-lg'}
+
+  .form-group.text-center
+    = form.submit 'Submit your talk', class: 'btn btn-primary btn-lg'

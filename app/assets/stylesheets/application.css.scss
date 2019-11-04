@@ -1,0 +1,104 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'bootstrap/dist/css/bootstrap';
+
+body {
+  font-family: 'Bitter', serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.form-control {
+  &::placeholder { color: #dfdfdf; }
+}
+
+abbr[title] {
+  color: red;
+  text-decoration: none;
+}
+
+.header {
+  position: relative;
+  padding: 3rem 0;
+  text-align: center;
+  color: #919396;
+  background-color: #f5f5f5;
+  margin: 0 -15px;
+
+  h1 {
+    margin: 1rem 0 0 0;
+    font-size: 18px;
+    font-weight: normal;
+
+    padding: 0 30rem;
+    @media (max-width: 1500px) { padding: 0 10rem; }
+    @media (max-width: 960px) { padding: 1rem; }
+  }
+}
+
+.logo {
+  line-height: 1;
+  color: #404144;
+  font-family: 'Roboto Slab', serif;
+
+  strong { font-weight: 700;}
+  span { font-weight: 100; }
+
+  font-size: 4rem;
+  @media (max-width: 960px) { font-size: 3rem; }
+
+  &.small {
+    font-size: 1rem;
+  }
+}
+
+.section {
+  text-align: center;
+
+  margin: 2rem 0;
+  padding: 0 30rem;
+  @media (max-width: 1500px) { padding: 0 10rem; margin: 1rem 0; }
+  @media (max-width: 960px) { padding: 0 1rem; margin: 1rem 0; }
+
+  h2 {
+    color: #404144;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
+  }
+
+  p { color: #919396 }
+}
+
+.social {
+  margin-bottom: 1rem;
+
+  a {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #ccc;
+    display: inline-block;
+    margin: 0 0.2rem;
+
+    &:hover { background-color: #bbb; }
+
+    i {
+      color: #ffffff;
+    }
+  }
+}
+
+form {
+  padding: 0 30rem;
+  @media (max-width: 1500px) { padding: 0 10rem; margin: 1rem 0; }
+  @media (max-width: 960px) { padding: 0 1rem; margin: 1rem 0; }
+  text-align: left;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+}

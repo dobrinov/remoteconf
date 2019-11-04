@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  pool: 1
+
+development:
+  <<: *default
+  database: remoteconf_development
+
+test:
+  <<: *default
+  database: remoteconf_test

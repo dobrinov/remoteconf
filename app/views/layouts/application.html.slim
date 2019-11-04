@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title RemoteConf
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Montserrat:100,100i,400,400i,700,700i,800,900|Roboto+Slab:100,400,700&display=swap" rel="stylesheet"
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+    = csrf_meta_tags
+
+  body
+    .container-fluid
+      = yield
+
+    footer.footer
+      .social
+        = link_to 'https://www.facebook.com/remoteconf/', target: 'blank' do
+          = icon 'fab', 'facebook-f'
+
+        = link_to 'https://twitter.com/RmtConf', target: 'blank' do
+          = icon 'fab', 'twitter'
+
+      .logo.small
+        strong remote
+        span conf
