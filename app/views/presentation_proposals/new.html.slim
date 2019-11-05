@@ -4,7 +4,8 @@ header.header
     span a
     strong speaker
 
-  h1 This is a perfect place for you to show off your skill/knowledge, boost your self marketing or raise the awareness for a new technology.
+  h1
+    = description 'This is a perfect place for you to show off your skill/knowledge, boost your self marketing or raise the awareness for a new technology.'
 
   = link_to 'Back', root_path, class: 'btn btn-lg btn-outline-secondary mt-5'
 
@@ -47,7 +48,9 @@ header.header
                                           label: 'Few words about yourself',
                                           placeholder: 'How would you like to present yourself to the audience?'
 
-  h3.text-center About your presentation
+  .text-center
+    h3 About your presentation
+    p It is a good idea to spend some time here. Those texts are your main tool for getting the attention of the audience and what will probably get your presentation selected.
   .form-group
     = form.input :presentation_title, input_html: {class: 'form-control-lg'},
                                       label: 'Presentation title',

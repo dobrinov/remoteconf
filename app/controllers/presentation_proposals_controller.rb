@@ -1,4 +1,8 @@
 class PresentationProposalsController < ApplicationController
+  before_action do
+    set_meta_tags title: 'Become a speaker'
+  end
+
   def new
     @presentation_proposal = PresentationProposal.new
   end
