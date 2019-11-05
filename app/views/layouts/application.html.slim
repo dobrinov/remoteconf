@@ -4,9 +4,6 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Montserrat:100,100i,400,400i,700,700i,800,900|Roboto+Slab:100,400,700&display=swap" rel="stylesheet"
 
-    - if Rails.env.production?
-      = javascript_include_tag 'https://www.googletagmanager.com/gtag/js?id=UA-151604282-1', async: true
-
     = display_meta_tags site: 'RemoteConf', og: {title: :title,
                                             type: 'website',
                                             description: :description,
@@ -33,6 +30,8 @@ html
         span conf
 
   - if Rails.env.production?
+    = javascript_include_tag 'https://www.googletagmanager.com/gtag/js?id=UA-151604282-1'
+
     javascript:
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
