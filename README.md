@@ -1,3 +1,5 @@
+![Image of Yaktocat](https://github.com/dobrinov/remoteconf/blob/master/app/assets/images/link.png)
+
 # RemoteConf
 
 Pseudo conference for software developers made of pre-recorded video presentations. It aims to collect knowledge from the past year and share it with the world. It is not focused on a specific technology, but on what is currently interesting.
