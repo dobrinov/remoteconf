@@ -38,7 +38,10 @@ CREATE TABLE public.presentation_proposals (
     presentation_description text NOT NULL,
     audience_experience_level character varying NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    presenter_github character varying,
+    presenter_gitlab character varying,
+    presenter_twitter character varying
 );
 
 
@@ -108,6 +111,7 @@ ALTER TABLE ONLY public.schema_migrations
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20191104141442');
+('20191104141442'),
+('20191109074031');
 
 

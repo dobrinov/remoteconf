@@ -19,19 +19,23 @@ header.header
 
 = simple_form_for @presentation_proposal, url: presentation_proposals_path(anchor: 'application') do |form|
   h5.text-center About you
-  .form-group
-    = form.input :presenter_name, input_html: {class: 'form-control-lg'}, label: 'Name'
+  = form.input :presenter_name, input_html: {class: 'form-control-lg'}, label: 'Name'
+  = form.input :presenter_email, input_html: {class: 'form-control-lg'}, label: 'Email'
 
-  .form-group
-    = form.input :presenter_email, input_html: {class: 'form-control-lg'}, label: 'Email'
+  = form.input :presenter_introduction, as: :text,
+                                        input_html: {class: 'form-control-lg', rows: 5},
+                                        label: 'Few words about yourself',
+                                        placeholder: 'How would you like to present yourself to the audience?'
 
-  .form-group
-    = form.input :presenter_introduction, as: :text,
-                                          input_html: {class: 'form-control-lg', rows: 5},
-                                          label: 'Few words about yourself',
-                                          placeholder: 'How would you like to present yourself to the audience?'
+  .row
+    .col
+      = form.input :presenter_github, input_html: {class: 'form-control-lg'}, label: 'Github handle', placeholder: 'Optional'
+    .col
+      = form.input :presenter_gitlab, input_html: {class: 'form-control-lg'}, label: 'Gitlab handle', placeholder: 'Optional'
+    .col
+      = form.input :presenter_twitter, input_html: {class: 'form-control-lg'}, label: 'Twitter handle', placeholder: 'Optional'
 
-  .text-center
+  .text-center.mt-5
     h3 About your presentation
     p It is a good idea to spend some time here. Those texts are your main tool for getting the attention of the audience and they are what will probably get your presentation selected.
 
